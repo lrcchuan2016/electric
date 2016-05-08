@@ -1,0 +1,143 @@
+<ion-view >
+  <ion-content class="padding selfBg">
+
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="getPhoto()">
+    </ion-refresher>
+    <h4 class="indexTitle">表号查询</h4>
+    <div class="list card selfList selfInputBox">
+      <i class="ion-search"></i>
+      <input type="text" placeholder="下拉可以扫电表号" ng-keydown='keyEnter()' ng-model="value" id="aaa">
+    </div>
+    <button class="button button-royal " style="width:100%" ng-click="openModal()">
+        确定
+    </button>
+    <h4 class="indexTitle">未抄报表</h4>
+    <div class="list card selfList">
+      <div class="slefCor" ng-repeat="slefCor in uncheckedLists">
+        <p>{{slefCor.userName}}</p>
+        <span>{{slefCor.address}}</span>
+      </div>
+    </div>
+    <h4 class="indexTitle">欠费报表</h4>
+    <div class="list card selfList">
+      <div class="slefCor" ng-repeat="slefCor in owecheckedLists">
+        <p>{{slefCor.userName}}</p>
+        <span>{{slefCor.address}}</span>
+      </div>
+    </div>
+    <!-- <input type="file" accept="image/*" id="imgInput"> -->
+    <button id="btn2" class="btn"></button>
+      <div class="backtrop" id="backtropQuer">
+          <div class="alert">
+            <p>请输入当前电表数</p>
+            <input type='text' placehoder='请输入电表号' name="now"  id="ammeterValue">
+            <button class="button" ng-click="hide()">取消</button>
+            <button class="button" ng-click="checkAlert()">确定</button>
+          </div>
+          <div class="alert" style="display:none">
+            <i class="ion-load-a" id="spin"></i>
+          </div>
+          
+    </div>
+    <!-- <button ng-click="test()">123</button> -->
+  </ion-content>
+  
+  <script id="my-modal.html" type="text/ng-template">
+    <!--登陆-->
+    <ion-modal-view>
+        
+        <ion-content scroll="false" class="bgcolor-denglu">
+            <img class="loginImg" src="img/loginBG.jpg"></img>
+            <div class="putTextView">
+              <div class="list list-inset optity" style="margin-top:15%;">
+                <input class="loginInput" placeholder="用户名">
+              </div>
+              <div class="list list-inset optity">
+                <input class="loginInput" placeholder="密码">
+              </div>
+              <a href="#/list" onclick="return login()">
+                <button class="button button-block loginButton" >
+                登录
+                </button>
+              </a>
+            </div>
+            
+            <div class="backtrop" id="backtrop">
+              <div class="alt">
+                <p>账户或密码错误!</p>
+                <button class="button button-light" ng-click="closeModal()">OK</button>
+              </div>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+
+  </script>
+
+
+  <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-royal">
+        <a class="button icon-left button-clear detailClose" ng-click="closeModal()">关闭</a>
+          <h1 class="titles" style="left:36px;right:36px;font-size: 18px; margin-top: 26px;
+  color: #FFF;
+  position: relative;">电表详情</h1>
+        </ion-header-bar>
+        <ion-content scroll="true" class="bgcolor-denglu">
+            <ul class="list">
+                <li class="firstitem">
+                    
+                      <div class="onemargin">
+                        表号 <span id="importent" class="editPoint">{{data.id}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+                <li class="firstitem">
+                    
+                      <div class="onemargin">
+                        用户名 <span id="importent" class="editPoint">{{data.userName}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+                 <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        抄表时间 <span id="importent" class="editPoint">{{data.updataTimeyear}}&nbsp{{data.updataTimemonth}}.{{data.updataTimeday}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                 </li>
+                <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        表数 <span id="importent" class="editPoint">{{data.ammeterValue}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+                
+                <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        费用 <span id="importent" class="editPoint">{{data.charge}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>  
+                <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        用电量 <span id="importent" class="editPoint">{{data.monthPower}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>                                                                                       
+            </ul>         
+              
+        </ion-content>
+      </ion-modal-view>
+    </script>
+</ion-view>

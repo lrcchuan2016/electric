@@ -1,0 +1,33 @@
+<ion-view view-title="Account">
+  <ion-content class="selfBg">
+    <div class="list selfCountHeader">
+
+	    <a class="item item-avatar selfCount " href="#/tab/ownmessage">
+	      <img src="img/electric.png" style="opacity: 0.7;">
+	      <p class="usennn" ng-repeat="usennn in myMessageList1s">用户名：{{usennn.name}}</p>
+	      <p class="adddd" ng-repeat="adddd in myMessageList1s">工号：{{adddd.id}}</p>
+	    </a>
+
+
+	</div>
+	<div class="list selfCount selfCountList">
+		<a class="item selfCount" href="#/tab/nocopy">
+			<i class="ion-clipboard"></i>
+			&nbsp 未抄报表
+		</a>
+		<a class="item selfCount" href="#/tab/copytable">
+			<i class="ion-clipboard"></i>
+			&nbsp 已抄报表
+		</a>
+		<div class="item item-divider mydivider"></div>
+		<a class="item selfCount" href="#/tab/owetable">
+			<i class="ion-clipboard"></i>
+			&nbsp 欠费报表
+		</a>
+		<a class="item selfCount" href="#/tab/alltable">
+			<i class="ion-clipboard"></i>
+			&nbsp 全部报表
+		</a>
+	</div>
+  </ion-content>
+</ion-view>

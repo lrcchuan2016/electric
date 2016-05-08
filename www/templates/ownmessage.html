@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-header-bar align-title="center" no-tap-scroll="true" class="bar bar-header bar-royal">
+        <div>
+        <a href="#/tab/account">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">个人信息</h1>
+        </div>
+    </ion-header-bar>
+	<ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+                  <div class="myMessageList">
+                    工号： <span id="importent" class="editPoint" ng-repeat="editPoint in myMessageLists">{{editPoint.id}}</span>
+                  </div>   
+                  <div class="myMessageList">
+                    用户名： <span id="importent" class="editPoint" ng-repeat="editPoint in myMessageLists">{{editPoint.name}}</span>
+                  </div>
+                  <div class="myMessageList">
+                    住址： <span id="importent" class="editPoint" ng-repeat="editPoint in myMessageLists">{{editPoint.address}}</span>
+                  </div>
+        <div class="outback" ></div>
+        <div class="outback" ></div>
+        <a href="#/tab/login" ><!-- onclick="return login()" -->
+          <button class="button button-block loginButton" ng-click="refresh()">
+          退出
+          </button>
+        </a>
+    </ion-content>  
+</ion-view>

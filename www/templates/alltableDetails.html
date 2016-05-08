@@ -1,0 +1,67 @@
+<ion-view>
+    <ion-header-bar align-title="center" no-tap-scroll="true" class="bar bar-header bar-royal">
+        <div>
+        <a href="#/tab/alltable">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">全部报表</h1>
+        </div>
+    </ion-header-bar>
+<ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+        <ul class="list">
+            <li class="firstitem">               
+                  <div class="onemargin">
+                    表号 <span id="importent" class="editPoint">{{data.id}}</span>
+                  </div>
+              <div class="firstspan"></div>
+            </li>
+            <li class="firstitem">
+                    
+                      <div class="onemargin">
+                        用户名 <span id="importent" class="editPoint">{{data.userName}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+             <li class="seconditem">
+                
+                  <div class="onemargin">
+                    抄表时间 <span id="importent" class="editPoint">{{data.updataTimeyear}}&nbsp{{data.updataTimemonth}}.{{data.updataTimeday}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+             </li>
+            <li class="seconditem">
+                
+                  <div class="onemargin">
+                    表数 <span id="importent" class="editPoint">{{data.ammeterValue}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>
+            
+            <li class="seconditem">
+                
+                  <div class="onemargin">
+                    费用 <span id="importent" class="editPoint">{{data.charge}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>  
+            <li class="seconditem">
+                
+                  <div class="onemargin">
+                    用电量 <span id="importent" class="editPoint">{{data.monthPower}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>        
+        </ul>         
+          <div class="biaoti">备注</div>
+            <form class="texta">
+              <textarea cols="6" rows="6" style="width:100%;"></textarea>
+            </form>
+        
+    </ion-content>  
+</ion-view>

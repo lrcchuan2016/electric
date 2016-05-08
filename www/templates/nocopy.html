@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-header-bar align-title="center" no-tap-scroll="true" class="bar bar-header bar-royal">
+        <div>
+        <a href="#/tab/account">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">未抄报表</h1>
+        </div>
+    </ion-header-bar>
+	<ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+       <div class="nocopylist" ng-repeat="uncheckedList in uncheckedLists">
+          <a class="item item-avatar mylist" href="#/tab/{{uncheckedList.id}}/nocopy-details" class="details">
+            <h2>{{uncheckedList.userName}}</h2>
+            <p>{{uncheckedList.address}}</p>
+          </a>
+      </div>
+    </ion-content>  
+</ion-view>

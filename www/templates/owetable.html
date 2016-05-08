@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-header-bar align-title="center" no-tap-scroll="true" class="bar bar-header bar-royal">
+        <div>
+        <a href="#/tab/account">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">欠费报表</h1>
+        </div>
+    </ion-header-bar>
+  <ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+       <div class="nocopylist" ng-repeat="owecheckedList in owecheckedLists">
+          <a class="item item-avatar mylist" href="#/tab/{{owecheckedList.id}}/owetableDetails" class="details">
+            <h2>{{owecheckedList.userName}}</h2>
+            <p>{{owecheckedList.address}}</p>
+          </a>
+      </div>
+    </ion-content>  
+</ion-view>

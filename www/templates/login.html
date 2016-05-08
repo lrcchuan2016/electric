@@ -1,0 +1,25 @@
+<ion-view>
+<ion-content scroll="false" class="bgcolor-denglu">
+   <img class="loginImg" src="img/loginBG.jpg"/>
+            <div class="putTextView">
+              <div class="list list-inset optity" style="margin-top:15%;">
+                <input  ng-model="username" id="userName"class="loginInput" placeholder="用户名">
+              </div>
+              <div class="list list-inset optity passWords">
+                <input  type="password"id="passWord"class="loginInput" placeholder="密码">
+              </div>
+              <a href="javascript:void(0)" ng-click="login()"><!-- onclick="return login()" -->
+                <button class="button button-block loginButton" >
+                登录
+                </button>
+              </a>
+            </div>
+            
+            <div class="backtrop" id="backtrop">
+              <div class="alt">
+                <p>账户或密码错误!</p>
+                <button class="button button-light" ng-click="closeModal()">OK</button>
+              </div>
+            </div>
+        </ion-content>
+      </ion-view> 
